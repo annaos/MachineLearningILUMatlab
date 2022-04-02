@@ -1,4 +1,7 @@
 filename = 'matrices.csv';
 T = readtable(filename);
-relation = T.relation;
-histogram(relation,15);
+
+rows = (T.conv0 == 1 | T.conv1 == 1);
+convergedRows = T(rows,:);
+
+histogram(convergedRows.relation, 15);
