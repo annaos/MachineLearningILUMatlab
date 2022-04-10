@@ -18,7 +18,7 @@ function [conv0, it0, conv1, it1, relation] = getEffective(A)
     it0 = it0(2) + (it0(1)-1)*restart;
     relError00 = norm(b-A*x0)/norm(b);
     relError01 = norm(x-x0)/norm(x);
-    relError0 = relError01;
+    relError0 = relError00;
 
     %DEBUG
 %    if (relError0 > tolError)
@@ -34,7 +34,7 @@ function [conv0, it0, conv1, it1, relation] = getEffective(A)
 
         relError10 = norm(b-A*x1)/norm(b);
         relError11 = norm(x-x1)/norm(x);
-        relError1 = relError11;
+        relError1 = relError10;
 
         %DEBUG
 %        if (relError1 > tolError)
